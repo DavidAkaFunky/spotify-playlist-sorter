@@ -7,9 +7,7 @@ def get_camelot(key, mode):
        However, in the Camelot wheel:
        C Major -> 8B, C# Major -> 3B, D Major -> 10B, ..., B Major -> 5B
        C Minor is 5A, C# Minor is 12A, D Minor is 7A, ..., B Minor is 2A"""
-    return (5 + 3 * mode + 7 * key) % 12, "A" if mode == 0 else "B"
-
-
+    return (5 + 3 * mode + 7 * key) % 12 + 1, "A" if mode == 0 else "B"
 
 def get_track_name_and_artist(track, track_features=None):
     track_info = track["track"]
